@@ -1,18 +1,19 @@
 {
-  "name": "highlightjs-solidity",
-  "version": "2.0.5",
-  "description": "highlight.js syntax definition for Ethereum's Solidity language",
-  "main": "src/index.js",
+  "name": "highlightjs-solidity-ts",
+  "version": "0.0.1",
+  "description": "highlight.js syntax definition for Ethereum's Solidity language in Typescript with highlight.js v11 support",
+  "main": "src/index.ts",
   "files": [
     "dist",
     "src"
   ],
   "scripts": {
-    "test": "mocha"
+    "check": "tsc --noEmit",
+    "test": "vitest"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/pospi/highlightjs-solidity.git"
+    "url": "git+ssh://git@github.com/sebastinez/highlightjs-solidity.git"
   },
   "keywords": [
     "Solidity",
@@ -21,15 +22,19 @@
     "highlightjs",
     "syntax"
   ],
-  "author": "pospi",
+  "author": "Sebastian Martinez<me@sebastinez.dev>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/highlightjs/highlightjs-solidity/issues"
+    "url": "https://github.com/sebastinez/highlightjs-solidity/issues"
   },
-  "homepage": "https://github.com/highlightjs/highlightjs-solidity#readme",
+  "homepage": "https://github.com/sebastinez/highlightjs-solidity#readme",
   "devDependencies": {
-    "highlightjs": "^9.12.0",
-    "mocha": "^6.2.1",
-    "parse5": "^5.1.0"
+    "parse5": "^7.1.2",
+    "prettier": "^2.8.0",
+    "typescript": "^4.9.3",
+    "vitest": "^0.25.5"
+  },
+  "dependencies": {
+    "highlight.js": "^11.7.0"
   }
 }

@@ -1,18 +1,21 @@
-name: Build and Test
-
+name: check
 on:
-  - push
-  - pull_request
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
 
 jobs:
-  build:
+  check:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - uses: actions/setup-node@v1
-      with:
-        node-version: 12.x
-    - name: npm install and build
-      run: npm ci
-    - name: test
-      run: npm test
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18.12.1"
+      - uses: actions/checkout@v2
+      - run: npm ci
+      - run: npm run check
+      - run: npm test
